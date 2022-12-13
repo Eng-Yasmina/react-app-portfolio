@@ -1,0 +1,67 @@
+@import "../../global.scss";
+
+.portfolio {
+    background:#0089ff radial-gradient(closest-side at 68% 55%,#0089ff 0%,#0093ff 100%) no-repeat padding-box padding-box;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+
+    @include mobile{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .right {
+        flex: 0.55;
+        overflow: hidden;
+        .imgContainer {
+            position: absolute;
+            display: flex;
+            width: 43.7em;
+            bottom: -40px;
+
+            @include mobile{
+                flex-direction: row;
+                align-items: center;
+                width: 40em;
+                left: 0;
+            }
+            img {
+                width: 90%;  
+            }
+    }
+}
+.left {
+    display: flex;
+    justify-content: center;
+    flex: 0.45;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 31.2em;
+       
+        flex-direction: column;
+        h1 {
+            .mouse_draw {
+                border: 3px solid #ffffff42;
+                border-radius: 12px;
+                margin: 10px 9px 0 1px;
+                padding: 7px 13px;
+                line-height: 1em;
+                display: inline-block;
+                position: relative;
+                transform: rotate(7deg);
+            }
+        }
+   
+    }
+    }
+ 
+}

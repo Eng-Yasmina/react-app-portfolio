@@ -1,0 +1,94 @@
+@import "../../global.scss";
+
+.main {
+    background: radial-gradient(114.1% 60.7% at 50% 45.6%,#002d3e 0%,#040819 100%);
+
+    .whatsapp {
+        position: fixed;
+        bottom: 5vh;
+        right: 5vw;
+        z-index: 5;
+        animation: scale 1.5s ease infinite;
+        
+
+        @keyframes scale {
+            0% {
+                transform: scale(99%);
+            }
+            50% {
+                transform: scale(107%);
+            }
+            100% {
+                transform: scale(99%);
+            }
+        }
+
+        img {
+        width: 4em;
+        }
+    }
+}
+.intro {
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+
+    @include mobile{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .right {
+        flex: 0.5;
+        overflow: hidden;
+        .imgContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34em;
+            height: 35em;
+            img {
+                width: 90%;
+            }
+    }
+}
+
+    .left {
+        flex: 0.5;
+        position: relative;
+        overflow: hidden;
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34em;
+            height: 35em;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+            @include mobile{
+                height: 30em;
+            }
+            span {
+                font-size: inherit;
+                color: #ff1821;
+            }
+        }
+        a {
+            position: absolute;
+            bottom:10px;
+            left: 40%;
+            img {
+                width: 30px;
+                animation: arrowBlink 2s infinite;
+            }
+            @keyframes arrowBlink {
+                100% {
+                    opacity: 0;
+                }
+            }
+        }
+
+        }
+     
+   
+}

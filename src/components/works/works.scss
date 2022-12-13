@@ -1,0 +1,118 @@
+@import "../../global.scss";
+
+.works {
+    .works-title {
+        text-align: center;
+        margin-top: 2em;
+    }
+    .projects {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 100vh;
+
+        @include mobile{
+            height: 60vh;
+        }
+        
+        .arrow {
+            height: 50px;
+            position: absolute;
+            cursor: pointer;
+            background: #9D19FA;
+            transform: scale(0.6);
+            padding: 2em;
+            border-radius: 50%;
+            transition: all 0.7s ease;
+
+            &:hover{
+                transform: scale(0.62);
+                box-shadow: 0 5px 40px rgba(1, 1, 1, 0.603);
+            }
+            
+            &.left{
+                left: 6.25em;
+                transform: rotateY(180deg) scale(0.6);
+                &:hover{
+                    transform: rotateY(180deg) scale(0.62);
+                    box-shadow: 0 5px 40px rgba(1, 1, 1, 0.603);
+                }
+                @include mobile{
+                    left: 0px;
+                    transform: rotateY(180deg) scale(.28);
+                }
+            }
+            
+            &.right{
+                right: 6.25em;
+                @include mobile{
+                    right: 0px;
+                    transform: scale(.28);
+                }
+            }
+        }
+        
+        .slider {
+            display: flex;
+            position: absolute;
+            left: 0;
+            transition: all 1s ease-out;
+            .container {
+                width: 100vw;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .item {
+                    flex: 0 1 51em;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    .image {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        border-radius: 20px;
+                        transition: all 0.5s ease;
+                        max-height: 20em;
+                        overflow: hidden;
+                        
+                        .demo {
+                            position: absolute;
+                            color: white;
+                            visibility: hidden;
+                            text-decoration: none;
+                            font-size: 1.9em;
+                        }
+                        
+                        img {
+                            width: 100%;
+                            border-radius: 20px;
+                            transition: all 0.5s ease;
+                        }
+                        
+                        &:hover {
+                            background-color: $mainColor;
+                            
+                            .demo {
+                                visibility: visible;
+                            }
+                            
+                            img {
+                                opacity: 0.2;
+                            }
+                        }
+                    }
+                    .project-title {
+                        font-size: 1.2em;
+                        font-weight: 700;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,146 @@
+@import "../../global.scss";
+
+.contact {
+    display: flex;
+
+    .left {
+        flex: 1;
+        overflow: hidden;
+
+        img {
+            height: 40em;
+        }
+    }
+    .right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4em;
+
+        .client-form {
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+        }
+
+        .main-intro {
+            text-align: center;
+            font-size: 2em;
+            margin: 1em 0;
+
+            @include mobile{
+                margin: 0 0 1em 0;
+            }
+        }
+
+        .section-form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+        }
+
+        .app-input-data {
+            box-shadow: 0 5px 30px rgba(1, 1, 1, 0.329);
+            max-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 4.5em;
+            font-size: 1.1em;
+            border-radius: 3.5em;
+        }
+
+        .form {
+            width: 100%;
+            position: relative;
+            height: 5em;
+            overflow: hidden;
+
+            label {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                padding: 1.89em;
+                border-bottom: 1px solid #c9c7c78a;
+           
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: -1px;
+                    height: 100%;
+                    width: 100%;
+                    border-bottom: 3px solid #5fa8d3;
+                    transform: translateX(-100%);
+                    transition: transform 0.3s ease;
+                }
+
+                span{
+                    position: absolute;
+                    bottom: 1.9em;
+                    left: 0px;
+                    transform: translateY(-150%);
+                    font-size: 1em;
+                    font-weight: 400;
+                    color: #5fa8d3;
+                }
+
+
+            }
+
+            .input {
+                width: 100%;
+                height: 100%;
+                padding-top: 1.2em;
+                border: none;
+                background: transparent;
+                outline: none;
+                font-size: 1em;
+                
+                &:-webkit-autofill { 
+                -webkit-background-clip: text;
+                }
+
+                &::placeholder {
+                    color: #797979a2;
+                    opacity: 0.6;
+                }
+
+                &:focus + label::after{
+                    transform: translateX(0%);
+                }
+
+
+                &:not(:placeholder-shown) + label::after{
+                    transform: translateX(0%);
+                }
+            }
+
+        }
+
+       
+
+        button {
+            background: transparent;
+            font-size: 1.2em;
+            cursor: pointer;
+            font-weight: 400;
+            border: none;
+            color: #5fa8d3;
+            transition: all 0.7s ease;
+
+            &:hover {
+                color: #74afd19d;;
+            }
+        }
+
+        span {
+            color: green;
+        }
+    }
+}
